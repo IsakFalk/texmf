@@ -1,0 +1,43 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{my_macros}[2020/03/31]
+
+% gives us access to DeclareMathOperator
+\RequirePackage{mathtools}
+
+% Commonly used spaces
+\newcommand{\K}{\ensuremath{\mathbb{K}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+% Linear Algebra
+\newcommand{\scal}[2]{\ensuremath{\left\langle{#1},{#2}\right\rangle}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\tr}{\ensuremath{\textrm{Tr}}}
+\newcommand{\MMD}[3]{\ensuremath{\mathrm{MMD}_{#1}(#2, #3)}}
+
+% Operators
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\V}{\mathrm{Var}}
+\newcommand{\mb}{\mathbf}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\Expect}[1]{\mathbb{E} \left[{#1}\right]}
+\newcommand{\Expects}[2]{\mathbb{E}_{{#1}} \left[{#2}\right]}
+\newcommand{\Var}[1]{\mbox{Var} \left[{#1}\right]}
+\newcommand{\Cov}[1]{\mbox{Cov} \left[{#1}\right]}
+\newcommand{\Vars}[2]{\mbox{Var}_{{#1}} \left[{#2}\right]}
+\newcommand{\Prob}[1]{\mathbb{P} \left({#1}\right)}
+\newcommand{\Probs}[2]{\mathbb{P}_{#1} \left({#2}\right)}
+
+% Optimisation
+\DeclareMathOperator*{\argmax}{\ensuremath{arg\,max}}
+\DeclareMathOperator*{\argmin}{\ensuremath{arg\,min}}
+\DeclareMathOperator*{\essup}{\ensuremath{ess\:sup}}
+\DeclareMathOperator*{\dom}{\ensuremath{dom}}
+\DeclareMathOperator*{\prox}{\ensuremath{prox}}
+
+% ML utilities
+\newcommand{\generaldataset}{\left(\mathbf{x}_{i}, y_{i} \right)_{i=1}^n}
