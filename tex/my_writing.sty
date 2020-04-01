@@ -1,0 +1,36 @@
+% Provides opinionated choice of packages and settings for writing (markdown experience)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{my_writing}[2020/03/31]
+
+% Add colors
+\RequirePackage{xcolor}
+
+% Superiour tabular support
+\RequirePackage{booktabs}
+
+% % Take notes in margin
+\RequirePackage{marginnote}
+\RequirePackage{mparhack}
+\RequirePackage{marginfix}
+
+% Internationalisation
+%\RequirePackage{polyglossia}
+%\setdefaultlanguage{english}
+\RequirePackage[english]{babel}
+
+% Better handling of floating environments
+\RequirePackage{float}
+
+% Source code
+\RequirePackage{minted}
+\definecolor{bg}{HTML}{282828} % Monokai background
+\setminted{bgcolor=bg,frame=lines,style=monokai}
+
+% Formatting of document
+\RequirePackage{geometry}
+
+% text and fonts
+\RequirePackage{fontspec}
+
+% Links, sets a load of options
+\RequirePackage[colorlinks]{hyperref}
