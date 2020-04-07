@@ -1,7 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{my_macros}[2020/03/31]
 
-% gives us access to DeclareMathOperator
+% maths fonts
+\RequirePackage{amsfonts}
+% gives us access to DeclareMathOperator and DeclarePairedDelimiter
+% amongst other things
 \RequirePackage{mathtools}
 
 % Commonly used spaces
@@ -13,9 +16,12 @@
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 %\newcommand{\C}{\ensuremath{\mathbb{C}}}
 
+% Analysis
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
 % Linear Algebra
-\newcommand{\scal}[2]{\ensuremath{\left\langle{#1},{#2}\right\rangle}}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\DeclarePairedDelimiterX{\scal}[2]{\langle}{\rangle}{#1, #2}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 \providecommand{\tr}{\ensuremath{\textrm{Tr}}}
 \newcommand{\MMD}[3]{\ensuremath{\mathrm{MMD}_{#1}(#2, #3)}}
 
@@ -38,6 +44,19 @@
 \DeclareMathOperator*{\essup}{\ensuremath{ess\:sup}}
 \DeclareMathOperator*{\dom}{\ensuremath{dom}}
 \DeclareMathOperator*{\prox}{\ensuremath{prox}}
+
+% Simple set building (from mathtools manual, page 28)
+% Make sure \given command exists
+\providecommand\given{}
+% Create symbol
+\newcommand\SetSymbol[1][]{%
+  \nonscript\:#1\vert
+  \allowbreak
+  \nonscript\:
+  \mathopen{}}
+% Create command
+\DeclarePairedDelimiterX{\Set}[1]\{\}{%
+  \renewcommand\given{\SetSymbol[\delimsize]}#1}
 
 % ML utilities
 \newcommand{\generaldataset}{\left(\mathbf{x}_{i}, y_{i} \right)_{i=1}^n}
